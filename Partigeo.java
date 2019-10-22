@@ -1,40 +1,62 @@
-import java.util.Scanner;
-public class paritgeo {
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ *
+ * @author rdelacruz
+ * @author Esterlin Polanco
+ */
+import java.util.*;
+public class Calculadoragrupo10v2 {
     
     public static Scanner entrada=new Scanner(System.in);
     public static void main(String args[]){
         
-                
-        System.out.println("Bienvenido a la calculadora, Seleccione una opción:");
-        System.out.println("1 - Cálculo Aritmetica");
-        System.out.println("2 - Cálculo Geometría");
+    programa();    
+        
+    }
+    
+    public static void programa(){
+        
+        
+        System.out.println("Bienvenido a la calculadora, Seleccione una opcion:");
+        System.out.println("1 - Calculo Aritmetica");
+        System.out.println("2 - Calculo Geometra­a");
         System.out.println("0 - Salir");
-                
+        
         int operacion = entrada.nextInt();
-                 
+        
+
+        while(true){
 
         switch(operacion){
    
             case 1 : arit();
-
+            
             break;
 
             case 2 : geom();
 
-            break;     
+            break;
+            
+            case 0 : System.exit(0);
+                   
     
             }
+        }
     } 
     public static void arit(){
 
-        System.out.println("Bienvenido a la calculadora de Aritmetica, Seleccione una opción:"); 
+        System.out.println("Bienvenido a la calculadora de Aritmetica, Seleccione una opcion:"); 
     
         System.out.println("1-Sumar");
         System.out.println("2-Restar");
         System.out.println("3-multiplicar");
         System.out.println("4-Dividir");
         System.out.println("5-Potencia");
-        System.out.println("0-Menú anterior");
+        System.out.println("0-Menu anterior");
 
         int operacionarit = entrada.nextInt();
 
@@ -69,6 +91,8 @@ public class paritgeo {
                 potencia();
                 
                 break;
+            
+            case 0 : programa();   
 
 
         }
@@ -76,14 +100,14 @@ public class paritgeo {
     
     public static void geom(){
 
-        System.out.println("Bienvenido a la calculadora de Geometría, Seleccione una opción:"); 
+        System.out.println("Bienvenido a la calculadora de Geometrica, Seleccione una opcion:"); 
     
         System.out.println("Calculo de areas:");
         System.out.println("1-Cuadrado");
-        System.out.println("2-Rectángulo");
-        System.out.println("3-Triángulo");
-        System.out.println("4-Círculo");
-        System.out.println("0-Menú anterior");
+        System.out.println("2-Rectangulo");
+        System.out.println("3-Triangulo");
+        System.out.println("4-Circulo");
+        System.out.println("0-Menu anterior");
 
 
         int operaciongeom = entrada.nextInt();
@@ -92,31 +116,34 @@ public class paritgeo {
 
             case 1 : 
 
-            acuadrado();
+                acuadrado();
+                break;
 
             case 2 : 
 
-            arectangulo();
+                arectangulo();
+                break;
 
             case 3 : 
 
-            atriangulo();
+                atriangulo();
+                break;
 
             case 4 :
 
-            acirculo();
+                acirculo();
+                break;
+                
+            case 0 : programa();    
 
         }
-
-
-
     }
     
     public static void sumar(){
         
-        System.out.println("Introduzca el primer número:");
+        System.out.println("Introduzca el primer numero:");
 		int num1 = entrada.nextInt();
-		System.out.println("Introduzca el segundo número:");
+		System.out.println("Introduzca el segundo numero:");
         int num2 = entrada.nextInt();
 
         int result = num1+num2;
@@ -125,9 +152,9 @@ public class paritgeo {
 
     public static void restar(){
         
-        System.out.println("Introduzca el primer número:");
+        System.out.println("Introduzca el primer numero:");
 		int num1 = entrada.nextInt();
-		System.out.println("Introduzca el segundo número:");
+		System.out.println("Introduzca el segundo numero:");
         int num2 = entrada.nextInt();
         
         int result = num1-num2;
@@ -136,33 +163,33 @@ public class paritgeo {
 
     public static void multiplicar(){
         
-        System.out.println("Introduzca el primer número:");
+        System.out.println("Introduzca el primer numero:");
 		int num1 = entrada.nextInt();
-		System.out.println("Introduzca el segundo número:");
+		System.out.println("Introduzca el segundo numero:");
         int num2 = entrada.nextInt();
         
         int result = num1*num2;
-        System.out.println("Multiplicación es igual a "+ result);
+        System.out.println("Multiplicacion es igual a "+ result);
     }
 
     public static void dividir(){
         
-        System.out.println("Introduzca el primer número:");
+        System.out.println("Introduzca el primer numero:");
 		int num1 = entrada.nextInt();
-		System.out.println("Introduzca el segundo número:");
+		System.out.println("Introduzca el segundo numero:");
         int num2 = entrada.nextInt();
         
         int result = num1/num2;
-        System.out.println("Divición es igual a "+ result);
+        System.out.println("Divicio es igual a "+ result);
     }
 
     public static void potencia(){
 
         int n, base;
         System.out.println("Ingrese la base: ");
-        base = tec.nextInt();
+        base = entrada.nextInt();
         System.out.println("Ingrese el exponente");
-        n = tec.nextInt();
+        n = entrada.nextInt();
         int resultado = (int) Math.pow(base, n);
         System.out.println(base + " elevado a la " + n + " es igual a " + resultado);
 
@@ -174,7 +201,7 @@ public class paritgeo {
         int base = entrada.nextInt();
         int result = base*base;
 
-        System.out.println("Área del cuadradrado es igual a "+ result);
+        System.out.println("Area del cuadradrado es igual a "+ result);
 
     }   
     
@@ -186,7 +213,7 @@ public class paritgeo {
         int altura = entrada.nextInt();
         int result = base*altura;
 
-        System.out.println("Área del rectangulo es igual a "+ result);
+        System.out.println("Area del rectangulo es igual a "+ result);
 
     }   
 
@@ -196,9 +223,9 @@ public class paritgeo {
         int base = entrada.nextInt();
         System.out.println("Introduzca la altura:");
         int altura = entrada.nextInt();
-        int result = base*altura;
+        double result = 0.5*base*altura;
 
-        System.out.println("Área del triangulo es igual a "+ result);
+        System.out.println("Area del triangulo es igual a "+ result);
 
     }
 
@@ -207,11 +234,13 @@ public class paritgeo {
         System.out.println("Introduzca el radio:");
         int radio = entrada.nextInt();
         
-        int result = Math.PI*(Math.pow(radio,2));
+        int result = (int) (Math.PI*(Math.pow(radio,2)));
 
-        System.out.println("Área del circulo es igual a "+ result);
+        System.out.println("Area del circulo es igual a "+ result);
+        
 
     }
 
 
 }    
+
