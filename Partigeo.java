@@ -9,12 +9,12 @@
  * @author Esterlin Polanco
  */
 import java.util.*;
-public class Calculadoragrupo10v2 {
+public class Partigeo {
     
     public static Scanner entrada=new Scanner(System.in);
     public static void main(String args[]){
         
-    programa();    
+        programa();    
         
     }
     
@@ -42,6 +42,10 @@ public class Calculadoragrupo10v2 {
             break;
             
             case 0 : System.exit(0);
+
+            default : System.out.println("Opcion no valida, intente de nuevo");
+
+            programa();
                    
     
             }
@@ -92,7 +96,13 @@ public class Calculadoragrupo10v2 {
                 
                 break;
             
-            case 0 : programa();   
+            case 0 : programa();
+            
+            default : System.out.println("Opcion no valida, intente de nuevo");
+
+            arit();
+
+            break;
 
 
         }
@@ -134,7 +144,13 @@ public class Calculadoragrupo10v2 {
                 acirculo();
                 break;
                 
-            case 0 : programa();    
+            case 0 : programa(); 
+            
+            default : System.out.println("Opcion no valida, intente de nuevo");
+
+            geom();
+
+            break;
 
         }
     }
@@ -197,9 +213,9 @@ public class Calculadoragrupo10v2 {
 
     public static void acuadrado(){
         
-        System.out.println("Introduzca la base o altura:");
-        int base = entrada.nextInt();
-        int result = base*base;
+        System.out.println("Introduzca un lado:");
+        double lado = entrada.nextInt();
+        double result = lado*lado;
 
         System.out.println("Area del cuadradrado es igual a "+ result);
 
@@ -219,13 +235,13 @@ public class Calculadoragrupo10v2 {
 
     public static void atriangulo(){
         
-        System.out.println("Introduzca la base:");
-        int base = entrada.nextInt();
-        System.out.println("Introduzca la altura:");
-        int altura = entrada.nextInt();
-        double result = 0.5*base*altura;
+        // System.out.println("Introduzca la base:");
+        // double base = entrada.nextInt();
+        // System.out.println("Introduzca la altura:");
+        // double altura = entrada.nextInt();
+        // double result = (base*altura)/2;
 
-        System.out.println("Area del triangulo es igual a "+ result);
+        // System.out.println("Area del triangulo es igual a "+ result);
 
     }
 
@@ -234,7 +250,7 @@ public class Calculadoragrupo10v2 {
         System.out.println("Introduzca el radio:");
         int radio = entrada.nextInt();
         
-        int result = (int) (Math.PI*(Math.pow(radio,2)));
+        double result = (double) (Math.PI*(Math.pow(radio,2)));
 
         System.out.println("Area del circulo es igual a "+ result);
         
